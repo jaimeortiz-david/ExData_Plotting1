@@ -1,0 +1,6 @@
+data<-read.csv("household_power_consumption.txt",header=T,sep=";")
+str(data)
+data$Global_active_power<-as.numeric(data$Global_active_power)
+hist(data$Global_active_power,col="red",main="Global Active Power",ylab="Frequency",xlab="Global Active Power (Kilowatts)")
+dev.copy(png, file = "plot1.png")
+dev.off()
